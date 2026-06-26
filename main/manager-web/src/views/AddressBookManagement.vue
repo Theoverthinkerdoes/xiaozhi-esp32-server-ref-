@@ -141,11 +141,9 @@
                 <p class="section-desc">{{ $t('addressBookManagement.setPermissionDesc', { count: selectedPermissions.length }) }}</p>
               </div>
               <div class="section-actions">
-                <el-button size="small" @click="handleCancel">{{ $t('common.cancel') }}</el-button>
-                <el-button size="small" @click="handleToggleSelectAll">
-                  {{ isAllSelected ? $t('addressBookManagement.deselectAll') : $t('addressBookManagement.selectAll') }}
-                </el-button>
-                <el-button type="primary" size="small" @click="handleSavePermissions">{{ $t('addressBookManagement.save') }}</el-button>
+                <CustomButton size="small" @click="handleCancel">{{ $t('common.cancel') }}</CustomButton>
+                <CustomButton size="small" @click="handleToggleSelectAll">{{ isAllSelected ? $t('addressBookManagement.deselectAll') : $t('addressBookManagement.selectAll') }}</CustomButton>
+                <CustomButton type="confirm" size="small" @click="handleSavePermissions">{{ $t('addressBookManagement.save') }}</CustomButton>
               </div>
             </div>
 
@@ -208,10 +206,11 @@ import VersionFooter from "@/components/VersionFooter.vue";
 import Api from "@/apis/api.js";
 import AddressBookApi from "@/apis/module/addressBook.js";
 import MacAddressMask from "@/components/MacAddressMask.vue";
+import CustomButton from "@/components/CustomButton.vue";
 
 export default {
   name: "AddressBookManagement",
-  components: { HeaderBar, VersionFooter, MacAddressMask },
+  components: { HeaderBar, VersionFooter, MacAddressMask, CustomButton },
   data() {
     return {
       searchKeyword: "",
@@ -587,7 +586,7 @@ export default {
   display: flex;
   flex-direction: column;
   background-size: cover;
-  background: linear-gradient(to bottom right, #dce8ff, #e4eeff, #e6cbfd) center;
+  background: #eff4ff;
   -webkit-background-size: cover;
   -o-background-size: cover;
   overflow: hidden;
@@ -946,8 +945,8 @@ export default {
     }
 
     .section-actions {
+      margin-top: 4px;
       display: flex;
-      gap: 8px;
     }
   }
 }

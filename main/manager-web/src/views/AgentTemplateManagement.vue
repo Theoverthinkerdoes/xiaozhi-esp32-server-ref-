@@ -54,7 +54,7 @@
                   <CustomButton :icon="isAllSelected ? 'el-icon-circle-close' : 'el-icon-circle-check'" size="small" @click="handleSelectAll">
                     {{ isAllSelected ? $t("agentTemplateManagement.deselectAll") : $t("agentTemplateManagement.selectAll") }}
                   </CustomButton>
-                  <CustomButton icon="el-icon-plus" size="small" @click="showAddTemplateDialog">
+                  <CustomButton type="add" icon="el-icon-plus" size="small" @click="showAddTemplateDialog">
                     {{ $t("agentTemplateManagement.createTemplate") }}
                   </CustomButton>
                   <CustomButton size="small" type="delete" icon="el-icon-delete" @click="batchDeleteTemplate">
@@ -401,7 +401,7 @@ export default {
   display: flex;
   position: relative;
   flex-direction: column;
-  background: linear-gradient(to bottom right, #dce8ff, #e4eeff, #e6cbfd) center;
+  background: #eff4ff;
   background-size: cover;
   overflow: hidden;
 }

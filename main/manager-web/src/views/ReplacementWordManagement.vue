@@ -70,7 +70,7 @@
                   >
                     {{ allSelected ? $t('user.deselectAll') : $t('user.selectAll') }}
                   </CustomButton>
-                  <CustomButton icon="el-icon-plus" size="small" @click="handleAdd">
+                  <CustomButton type="add" icon="el-icon-plus" size="small" @click="handleAdd">
                     {{ $t('replacementWordManagement.addFile') }}
                   </CustomButton>
                   <CustomButton size="small" type="delete" icon="el-icon-delete" @click="handleBatchDelete">
@@ -386,7 +386,7 @@ export default {
   position: relative;
   flex-direction: column;
   background-size: cover;
-  background: linear-gradient(to bottom right, #dce8ff, #e4eeff, #e6cbfd) center;
+  background: #eff4ff;
   -webkit-background-size: cover;
   -o-background-size: cover;
   overflow: hidden;
